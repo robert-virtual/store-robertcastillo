@@ -4,7 +4,10 @@ const prisma = new PrismaClient();
 const { hash } = require("argon2");
 
 exports.me = async (req, res) => {
-  const users = await prisma.user.findUnique({ where: { id: req.userId } });
+  const users = await prisma.user.findUnique({
+    where: { id: req.userId },
+    select: { name: true, email: true, bio: true },
+  });
   res.json({ users });
 };
 
