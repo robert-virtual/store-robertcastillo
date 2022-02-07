@@ -13,8 +13,8 @@ exports.GetRange = async (req = request, res = response) => {
         images: true,
         seller: {
           select: {
-            name,
-            imageUrl,
+            name: true,
+            imageUrl: true,
           },
         },
       },
