@@ -4,8 +4,8 @@ const router = require("express").Router();
 const { validateData } = require("../helpers/validator");
 const auth = require("../middlewares/auth");
 
-router.get("/", GetRange);
-router.get("/", getByCategory);
+router.get("/range", GetRange);
+router.get("/bycategory", getByCategory);
 
 // crear producto
 router.post(

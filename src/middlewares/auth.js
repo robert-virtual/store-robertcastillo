@@ -9,7 +9,6 @@ function auth(req = request, res = response, next) {
   }
   try {
     let payload = verify(token, process.env.ACCESS_TOKEN_SECRET);
-    console.log("payload: ", payload.userId);
     req.userId = payload.userId;
     next();
   } catch (error) {

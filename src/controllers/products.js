@@ -6,8 +6,8 @@ exports.GetRange = async (req = request, res = response) => {
   const { start, end } = req.query;
   try {
     const products = await prisma.product.findMany({
-      skip: start,
-      take: end,
+      skip: Number(start),
+      take: Number(end),
     });
     res.json({ products });
   } catch (error) {
@@ -20,7 +20,9 @@ exports.getByCategory = async (req = request, res = response) => {
   const products = await prisma.product.findMany({
     where: {
       category: {
-        name: category,
+        name: {
+          contains: category,
+        },
       },
     },
   });
