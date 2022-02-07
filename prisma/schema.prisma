@@ -48,6 +48,7 @@ model User {
   id      Int      @id @default(autoincrement())
   email   String   @unique
   name    String?
+  imageUrl    String?
   password    String?
   refreshToken String?
   bio    String?

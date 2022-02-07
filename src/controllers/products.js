@@ -8,8 +8,20 @@ exports.GetRange = async (req = request, res = response) => {
     const products = await prisma.product.findMany({
       skip: Number(start),
       take: Number(end),
+      include: {
+        category: true,
+        images: true,
+        seller: {
+          select: {
+            name,
+            imageUrl,
+          },
+        },
+      },
     });
-    res.json({ products });
+    res.json({
+      products,
+    });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

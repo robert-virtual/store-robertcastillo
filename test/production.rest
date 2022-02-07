@@ -1,0 +1,58 @@
+
+GET https://store-robert.herokuapp.com/api/products/bycategory?category=tec
+
+
+### crear producto
+POST https://store-robert.herokuapp.com/api/products
+Content-Type: application/json
+atk: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlhdCI6MTY0NDI0OTA3NiwiZXhwIjoxNjQ0MjUwODc2fQ.hX8fulWDWyacgmAXUTByTa1Kk33fS_F9OW-kD2mwUXU
+
+{
+    "name":"Memoria RAM DDR4 8GB",
+    "price":1000,
+    "quantity":50,
+    "categoryId":44,
+    "description":"Memoria RAM DDR4 8GB"
+}
+
+
+### servidor principal
+GET https://store-robert.herokuapp.com/api/users/me
+
+### logout
+DELETE http://localhost:3001/auth/logout
+atk: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlhdCI6MTY0NDI0OTA3NiwiZXhwIjoxNjQ0MjUwODc2fQ.hX8fulWDWyacgmAXUTByTa1Kk33fS_F9OW-kD2mwUXU
+
+
+
+
+### refresh token
+POST http://localhost:3001/auth/token
+Content-Type: application/json
+
+{
+    "refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY0NDE5OTI5OX0.0uvZavdGtR96yOOS05OEjjzGaXtmAL8aPhoFMaJopBw"
+}
+
+
+### login
+POST http://localhost:3001/auth/login
+Content-Type: application/json
+
+{
+    "email":"robertocastillo945@gmail.com",
+    "password":"C@stellan0s12"
+}
+
+
+
+
+### production
+POST https://store-robert.herokuapp.com/api/users
+Content-Type: application/json
+
+{
+    "name":"Roberto Castillo",
+    "email":"castilloroberto186@gmnail.com",
+    "password":"C@stellan0s12"
+}
