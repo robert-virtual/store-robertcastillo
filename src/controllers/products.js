@@ -27,8 +27,17 @@ exports.getByCategory = async (req = request, res = response) => {
   res.json({ products });
 };
 
-exports.create = (req = request, res = response) => {
-  const {userId} = req
-  
-  res.json({ msg: "create" });
+exports.create = async (req = request, res = response) => {
+  const { userId } = req;
+  try {
+    const product = await prisma.product.create({
+      data: {
+        sellerId: userId,
+        ...req.body,
+      },
+    });
+    res.json({ msg: "Producto creado", product });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
