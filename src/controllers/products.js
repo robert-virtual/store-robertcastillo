@@ -47,7 +47,11 @@ exports.create = async (req = request, res = response) => {
     const product = await prisma.product.create({
       data: {
         sellerId: userId,
-        ...req.body,
+        images: {
+          create: {
+            url: `${process.env.SERVER_URL}/${req.file.filename}`,
+          },
+        },
       },
     });
     res.json({ msg: "Producto creado", product });
