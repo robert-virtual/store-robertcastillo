@@ -8,3 +8,13 @@ Content-Type: application/json
    
     "email":"castilloroberto186@gmnail.com"
 }
+### production
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+    "name":"Roberto Castillo",
+    "email":"castilloroberto186@gmnail.com",
+    "password":"C@stellan0s12",
+}
+
