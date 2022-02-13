@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-app.use(morgan("dev"));
 if (process.env.NODE_ENV == "development") {
   require("dotenv").config();
+  app.use(morgan("dev"));
 }
 const cors = require("cors");
 const port = process.env.PORT || 3030;
