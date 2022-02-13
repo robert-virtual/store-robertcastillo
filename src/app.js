@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
-const morgan = require("morgan");
 if (process.env.NODE_ENV == "development") {
+  const morgan = require("morgan");
   require("dotenv").config();
   app.use(morgan("dev"));
 }
