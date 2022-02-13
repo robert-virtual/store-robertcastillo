@@ -10,11 +10,11 @@ router.get("/me", auth, me);
 // crear usuario
 router.post(
   "/",
+  // body("name").isLength({ min: 3 }),
+  // body("email").isEmail(),
+  // body("password").isLength({ min: 8 }),
+  // validateData,
   upload.single("image"),
-  body("name").isLength({ min: 3 }),
-  body("email").isEmail(),
-  body("password").isLength({ min: 8 }),
-  validateData,
   create
 );
 

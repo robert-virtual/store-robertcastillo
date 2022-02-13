@@ -28,7 +28,7 @@ exports.create = async (req = request, res = response) => {
         imageUrl,
       },
     });
-    res.json({ msg: "usuario creado" });
+    res.json({ msg: "usuario creado", body: req.body });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
